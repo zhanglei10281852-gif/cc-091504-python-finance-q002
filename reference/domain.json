@@ -1,0 +1,14 @@
+{
+  "goal_types": [
+    "emergency",
+    "housing",
+    "education",
+    "retirement"
+  ],
+  "risk_bands": [
+    "conservative",
+    "balanced",
+    "growth"
+  ],
+  "base_currency": "CNY"
+}
