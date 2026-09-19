@@ -1,0 +1,47 @@
+{
+  "quote_date": "2026-09-18",
+  "currency": "CNY",
+  "instruments": [
+    {
+      "id": "CN_MM",
+      "name": "同业存单指数货币基金",
+      "asset_class": "money",
+      "last_price": "1.0000",
+      "lot_size": 1,
+      "min_trade_amount": "1000.00",
+      "settlement_days": 1
+    },
+    {
+      "id": "CN_BOND",
+      "name": "中高等级利率债基金",
+      "asset_class": "bond",
+      "last_price": "1.1800",
+      "lot_size": 100,
+      "min_trade_amount": "1000.00",
+      "settlement_days": 1
+    },
+    {
+      "id": "CN_STOCK",
+      "name": "沪深300交易型指数基金",
+      "asset_class": "stock",
+      "last_price": "4.1200",
+      "lot_size": 100,
+      "min_trade_amount": "5000.00",
+      "settlement_days": 1
+    },
+    {
+      "id": "EDU_STOCK",
+      "name": "教育金专属成长股票基金",
+      "asset_class": "stock",
+      "last_price": "2.3500",
+      "lot_size": 1,
+      "min_trade_amount": "1000.00",
+      "settlement_days": 1
+    }
+  ],
+  "default_instrument_by_class": {
+    "money": "CN_MM",
+    "bond": "CN_BOND",
+    "stock": "CN_STOCK"
+  }
+}

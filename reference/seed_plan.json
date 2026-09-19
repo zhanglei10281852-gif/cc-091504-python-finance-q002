@@ -1,0 +1,107 @@
+{
+  "id": "plan-wang",
+  "household": {
+    "id": "hh-wang",
+    "name": "王磊家庭",
+    "base_currency": "CNY",
+    "members": [
+      {"id": "m1", "name": "王磊", "relation": "本人", "birth_date": "1985-04-12"},
+      {"id": "m2", "name": "林岚", "relation": "配偶", "birth_date": "1987-09-30"},
+      {"id": "m3", "name": "王小宇", "relation": "子女", "birth_date": "2018-06-05"}
+    ]
+  },
+  "as_of": "2026-09-18",
+  "assumptions": {
+    "monthly_household_expense": "33000.00",
+    "emergency_months": 6,
+    "default_risk_band": "balanced",
+    "housing_target_date_original": "2028-09-01",
+    "note": "购房计划由2028-09提前至2027-03，提前约18个月"
+  },
+  "goals": [
+    {"id": "g_emergency", "type": "emergency", "name": "家庭应急准备金", "member_id": null,
+     "target_amount": "198000.00", "target_date": null, "priority": 10, "risk_band": "conservative"},
+    {"id": "g_housing", "type": "housing", "name": "购房首付", "member_id": "m1",
+     "target_amount": "800000.00", "target_date": "2027-03-01", "priority": 20, "risk_band": "conservative"},
+    {"id": "g_education", "type": "education", "name": "子女本科教育金", "member_id": "m3",
+     "target_amount": "800000.00", "target_date": "2030-09-01", "priority": 30, "risk_band": "balanced"},
+    {"id": "g_retirement", "type": "retirement", "name": "配偶与本人养老", "member_id": "m1",
+     "target_amount": "4000000.00", "target_date": "2046-09-01", "priority": 40, "risk_band": "growth"}
+  ],
+  "accounts": [
+    {"id": "acct_checking", "name": "家庭活期结算账户", "institution": "某银行",
+     "tax_status": "taxable", "goal_ids": ["g_emergency"],
+     "cash": "80000.00", "unsettled_cash": [], "lots": []},
+    {"id": "acct_broker", "name": "通用证券账户", "institution": "某券商",
+     "tax_status": "taxable", "goal_ids": ["g_retirement"],
+     "cash": "500.00", "unsettled_cash": [],
+     "lots": [
+       {"id": "lot-broker-mm", "instrument_id": "CN_MM", "units": "160000",
+        "cost_basis": "1.0000", "acquisition_date": "2026-09-01",
+        "locked": false, "lockup_until": null, "note": "应急储备的可变现后援"},
+       {"id": "lot-broker-csi", "instrument_id": "CN_STOCK", "units": "20000",
+        "cost_basis": "3.5000", "acquisition_date": "2025-01-10",
+        "locked": false, "lockup_until": null, "note": "长期持有沪深300ETF"}
+     ]},
+    {"id": "acct_housing", "name": "购房专项账户", "institution": "某基金",
+     "tax_status": "housing_special", "goal_ids": ["g_housing"],
+     "cash": "0.00",
+     "unsettled_cash": [
+       {"amount": "12000.00", "settlement_date": "2026-09-21", "source": "上周货币基金赎回待交收"}
+     ],
+     "lots": [
+       {"id": "lot-housing-mm", "instrument_id": "CN_MM", "units": "300000",
+        "cost_basis": "1.0000", "acquisition_date": "2026-06-18",
+        "locked": false, "lockup_until": null},
+       {"id": "lot-housing-bond", "instrument_id": "CN_BOND", "units": "169400",
+        "cost_basis": "1.1000", "acquisition_date": "2026-03-10",
+        "locked": false, "lockup_until": null}
+     ]},
+    {"id": "acct_edu", "name": "子女教育金账户", "institution": "某基金",
+     "tax_status": "education_special", "goal_ids": ["g_education"],
+     "cash": "0.00",
+     "unsettled_cash": [],
+     "lots": [
+       {"id": "lot-edu-growth-a", "instrument_id": "EDU_STOCK", "units": "100000",
+        "cost_basis": "2.1000", "acquisition_date": "2025-03-15",
+        "locked": false, "lockup_until": null, "note": "可交易批次"},
+       {"id": "lot-edu-growth-b", "instrument_id": "EDU_STOCK", "units": "53192",
+        "cost_basis": "2.3000", "acquisition_date": "2026-08-10",
+        "locked": true, "lockup_until": null,
+        "note": "客户书面锁定：认为反弹未结束，暂不允许卖出"}
+     ]},
+    {"id": "acct_retire", "name": "个人养老金账户", "institution": "某银行养老",
+     "tax_status": "tax_deferred", "goal_ids": ["g_retirement"],
+     "restricted_withdrawal": true,
+     "cash": "0.00", "unsettled_cash": [],
+     "lots": [
+       {"id": "lot-retire-bond", "instrument_id": "CN_BOND", "units": "127100",
+        "cost_basis": "1.1000", "acquisition_date": "2025-05-08",
+        "locked": false, "lockup_until": null},
+       {"id": "lot-retire-csi-free", "instrument_id": "CN_STOCK", "units": "61200",
+        "cost_basis": "3.8000", "acquisition_date": "2025-06-20",
+        "locked": false, "lockup_until": null},
+       {"id": "lot-retire-csi-lockup", "instrument_id": "CN_STOCK", "units": "60000",
+        "cost_basis": "3.6000", "acquisition_date": "2026-01-12",
+        "locked": false, "lockup_until": "2027-06-30",
+        "note": "员工持股计划，2027-06-30解禁，禁售"}
+     ]}
+  ],
+  "contributions": [
+    {"id": "c_housing", "goal_id": "g_housing", "account_id": "acct_housing",
+     "amount": "8000.00", "frequency": "monthly", "anchor_day": 20,
+     "start_date": "2026-10-20", "end_date": "2027-02-20"},
+    {"id": "c_edu", "goal_id": "g_education", "account_id": "acct_edu",
+     "amount": "4000.00", "frequency": "monthly", "anchor_day": 20,
+     "start_date": "2026-10-20", "end_date": "2030-08-20"},
+    {"id": "c_retire", "goal_id": "g_retirement", "account_id": "acct_retire",
+     "amount": "5000.00", "frequency": "monthly", "anchor_day": 20,
+     "start_date": "2026-10-20", "end_date": "2046-08-20"}
+  ],
+  "expenses": [
+    {"id": "e_housing_tax", "goal_id": "g_housing", "account_id": "acct_housing",
+     "amount": "50000.00", "due_date": "2027-01-20", "name": "购房税费与中介费用"},
+    {"id": "e_household_yearend", "goal_id": null, "account_id": "acct_checking",
+     "amount": "30000.00", "due_date": "2026-12-21", "name": "家庭年度大额支出"}
+  ]
+}

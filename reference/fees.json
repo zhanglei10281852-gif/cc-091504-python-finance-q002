@@ -1,0 +1,13 @@
+{
+  "description": "费用与税务样例。佣金按基点与最低佣金取大；印花税仅卖出；资本利得税按账户税务属性与持有期区分。",
+  "commission_bp": 3,
+  "min_commission": "5.00",
+  "stamp_duty_bp_sell": 5,
+  "capital_gains_tax": [
+    {"tax_status": "taxable", "short_rate": 0.20, "long_rate": 0.10, "long_holding_days": 365},
+    {"tax_status": "tax_deferred", "short_rate": 0.0, "long_rate": 0.0, "long_holding_days": 365},
+    {"tax_status": "tax_exempt", "short_rate": 0.0, "long_rate": 0.0, "long_holding_days": 365},
+    {"tax_status": "housing_special", "short_rate": 0.0, "long_rate": 0.0, "long_holding_days": 365},
+    {"tax_status": "education_special", "short_rate": 0.0, "long_rate": 0.0, "long_holding_days": 365}
+  ]
+}

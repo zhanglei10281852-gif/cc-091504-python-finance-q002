@@ -1,0 +1,40 @@
+{
+  "description": "到期压力情景：年化收益按首个年度冲击后恢复基准处理；contribution_haircut 表示定投/新增缴费受收入冲击的折减；target_multiplier 作用于目标名义额（通胀）。",
+  "scenarios": [
+    {
+      "id": "baseline",
+      "name": "基准情景",
+      "returns": {"cash": 0.0, "money": 0.018, "bond": 0.035, "stock": 0.08},
+      "contribution_haircut": 0.0,
+      "target_multiplier": 1.0
+    },
+    {
+      "id": "equity_crash",
+      "name": "权益急跌",
+      "returns": {"cash": 0.0, "money": 0.018, "bond": 0.05, "stock": -0.30},
+      "contribution_haircut": 0.0,
+      "target_multiplier": 1.0
+    },
+    {
+      "id": "rates_up",
+      "name": "利率上行",
+      "returns": {"cash": 0.0, "money": 0.025, "bond": -0.08, "stock": -0.10},
+      "contribution_haircut": 0.0,
+      "target_multiplier": 1.0
+    },
+    {
+      "id": "income_shock",
+      "name": "家庭收入下滑",
+      "returns": {"cash": 0.0, "money": 0.015, "bond": 0.02, "stock": -0.15},
+      "contribution_haircut": 0.30,
+      "target_multiplier": 1.0
+    },
+    {
+      "id": "inflation",
+      "name": "通胀抬升",
+      "returns": {"cash": -0.02, "money": -0.03, "bond": -0.04, "stock": 0.02},
+      "contribution_haircut": 0.0,
+      "target_multiplier": 1.08
+    }
+  ]
+}

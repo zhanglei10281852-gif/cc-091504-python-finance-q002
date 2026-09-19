@@ -1,0 +1,24 @@
+{
+  "base_currency": "CNY",
+  "classes": [
+    {"id": "cash", "name": "现金", "risk_rank": 0, "liquidity_days": 0},
+    {"id": "money", "name": "货币/现金管理类", "risk_rank": 1, "liquidity_days": 1},
+    {"id": "bond", "name": "固定收益类", "risk_rank": 2, "liquidity_days": 2},
+    {"id": "stock", "name": "权益类", "risk_rank": 3, "liquidity_days": 2}
+  ],
+  "glide_path": {
+    "near_term_years": 3,
+    "long_term_years": 10,
+    "equity_cap_1y": 0.10,
+    "equity_cap_3y": 0.25,
+    "risk_band_mix": {
+      "conservative": {"money": 0.20, "bond": 0.60, "stock": 0.20},
+      "balanced": {"money": 0.10, "bond": 0.40, "stock": 0.50},
+      "growth": {"money": 0.05, "bond": 0.20, "stock": 0.75}
+    },
+    "default_risk_band": "balanced",
+    "drift_band": 0.05,
+    "min_rebalance_amount": "5000.00",
+    "bond_readiness_haircut": 0.05
+  }
+}
