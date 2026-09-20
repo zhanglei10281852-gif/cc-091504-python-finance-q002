@@ -10,5 +10,39 @@
     "balanced",
     "growth"
   ],
+  "engine_risk_bands": [
+    "cash",
+    "fixed_income",
+    "balanced",
+    "equity"
+  ],
+  "tax_treatments": [
+    "taxable",
+    "tax_deferred",
+    "tax_free"
+  ],
+  "lot_statuses": [
+    "tradable",
+    "locked",
+    "pending_settlement"
+  ],
+  "plan_statuses": [
+    "executable",
+    "planned_only"
+  ],
+  "constraint_codes": [
+    "lot_locked",
+    "pending_settlement",
+    "pending_cash",
+    "client_locked",
+    "min_trade_unit",
+    "unfunded_gap",
+    "insufficient_cash",
+    "drift_unresolved",
+    "no_default_asset"
+  ],
+  "money_precision": "decimal-2dp",
+  "quantity_precision": "decimal-4dp",
+  "settlement_lag_days": 1,
   "base_currency": "CNY"
 }
